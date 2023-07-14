@@ -1,0 +1,106 @@
+﻿@page
+@model studentInj.Pages.Clients.EditModel
+@{
+}
+<br />
+<h2>Edit client</h2>
+
+@*SPACE FOR ERROR MESSAGE*@
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dimiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST">
+    @*<div class="row mb-3">
+        <label class="col sm-3 col-form-label">Student ID</label>
+        <div class="col-sm-6">*@
+    <input type="hidden" class="form-control" name="stid" value="@Model.student.stid" />
+    @*</div>
+        </div>*@
+    @*<div class="row mb-3">
+        <label class="col sm-3 col-form-label">College ID</label>
+        <div class="col-sm-6">*@
+    <input type="hidden" class="form-control" name="clid" value="@Model.student.clid" />
+    @*</div>
+        </div>*@
+    <div class="row mb-3">
+        <label class="col sm-3 col-form-label">First Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="first_name" value="@Model.student.first_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col sm-3 col-form-label">Last Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="last_name" value="@Model.student.last_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col sm-3 col-form-label">D.O.B.</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="dob" value="@Model.student.dob" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col sm-3 col-form-label">Father's Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="father_name" value="@Model.student.father_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col sm-3 col-form-label">Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="s_address" value="@Model.student.s_address" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col sm-3 col-form-label">Phone No</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phone" value="@Model.student.phone" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col sm-3 col-form-label">Hostel</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="hostel" value="@Model.student.hostel" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col sm-3 col-form-label">Dept</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="dept" value="@Model.student.dept" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col sm-3 col-dform-label">Admission Date</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="admission_date" value="@Model.student.admission_date" />
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dimiss='alert' aria-label='Close'></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Clients/Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>
+
